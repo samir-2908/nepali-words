@@ -120,5 +120,56 @@
         pramukhIME.setLanguage(lang[1], lang[0]);
         document.getElementById('typingarea').focus();
     </script>
+    <script>
+        // Disable text selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+    
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    
+        // Disable copying
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+        });
+    
+        // Prevent screenshot by preventing developer tools (basic protection)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'PrintScreen') {
+                e.preventDefault();
+            }
+        });
+    
+        // Disable printing (Ctrl + P) and ask for admin login
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                askAdminLogin();
+            }
+        });
+    
+        function askAdminLogin() {
+            const adminPassword = "CRUISE_2908i"; // Replace with your actual admin password
+            const userPassword = prompt("Enter admin password to print this page:");
+            if (userPassword === adminPassword) {
+                alert("Login successful. You can now print the page.");
+                window.print();
+            } else {
+                alert("Incorrect password. You cannot print this page.");
+            }
+        }
+
+        function searchFormulas() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let formulas = document.querySelectorAll('.formula');
+            formulas.forEach(formula => {
+                let text = formula.textContent.toLowerCase();
+                formula.style.display = text.includes(input) ? 'block' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>
