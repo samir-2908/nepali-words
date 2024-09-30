@@ -23,24 +23,29 @@
     <script src="https://www.typenepali.com/wp-content/themes/typenepali/js/pramukhindic.js?ver=6.5.5"></script>
     <script src="https://www.typenepali.com/wp-content/themes/typenepali/js/pramukhime-common.js?ver=6.5.5"></script>
     <style>
+        /* General body styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: row;
         }
-        /* Left sidebar for ads */
+
+        /* Sidebar styles for ads */
         .sidebar-left {
             width: 300px;
             padding: 10px;
             background: #f0f0f0;
             height: 100vh;
         }
+
         /* Main content styling */
         .site-content {
             flex-grow: 1;
             padding: 20px;
         }
+
         textarea {
             width: 100%;
             height: 200px;
@@ -50,24 +55,98 @@
             border-radius: 5px;
             resize: vertical;
         }
+
         h2 {
             border-bottom: 2px solid #ccc;
             padding-bottom: 10px;
         }
+
         p {
             line-height: 1.6;
         }
+
         hr {
             border: 0;
             border-top: 1px solid #ccc;
             margin: 20px 0;
         }
+
         .site-main {
             padding: 20px;
             background: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+
+        /* Media Queries for Responsive Design */
+
+        /* For devices with max width of 1200px (tablets in landscape mode) */
+        @media (max-width: 1200px) {
+            .sidebar-left {
+                width: 250px;
+            }
+        }
+
+        /* For devices with max width of 992px (tablets in portrait mode or smaller screens) */
+        @media (max-width: 992px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar-left {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* For devices with max width of 768px (small tablets or large smartphones) */
+        @media (max-width: 768px) {
+            .sidebar-left {
+                width: 100%;
+                padding: 10px 0;
+                text-align: center;
+            }
+            .site-content {
+                padding: 15px;
+            }
+            textarea {
+                height: 150px;
+                font-size: 14px;
+            }
+        }
+
+        /* For devices with max width of 576px (smartphones) */
+        @media (max-width: 576px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar-left {
+                width: 100%;
+                height: auto;
+            }
+            .site-content {
+                padding: 10px;
+            }
+            textarea {
+                height: 120px;
+                font-size: 13px;
+            }
+        }
+
+        /* For extra small devices (phones in portrait mode) */
+        @media (max-width: 400px) {
+            .sidebar-left {
+                width: 100%;
+                padding: 5px;
+            }
+            .site-content {
+                padding: 5px;
+            }
+            textarea {
+                height: 100px;
+                font-size: 12px;
+            }
+        }
+
     </style>
 </head>
 <body>
