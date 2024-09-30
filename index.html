@@ -116,9 +116,6 @@
 
         /* For devices with max width of 576px (smartphones) */
         @media (max-width: 576px) {
-            body {
-                flex-direction: column;
-            }
             .sidebar-left {
                 width: 100%;
                 height: auto;
@@ -129,6 +126,11 @@
             textarea {
                 height: 120px;
                 font-size: 13px;
+            }
+            /* Reduce ad size for small devices */
+            .adsbygoogle {
+                width: 250px !important;
+                height: 250px !important;
             }
         }
 
@@ -144,6 +146,11 @@
             textarea {
                 height: 100px;
                 font-size: 12px;
+            }
+            /* Reduce ad size for very small devices */
+            .adsbygoogle {
+                width: 200px !important;
+                height: 200px !important;
             }
         }
 
