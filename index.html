@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Type in Nepali</title>
 
-    <!-- Google AdSense -->
+    <!-- Google AdSense Account Meta Tag -->
+    <meta name="google-adsense-account" content="ca-pub-9028889920072565">
+
+    <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9028889920072565" crossorigin="anonymous"></script>
 
     <!-- JavaScript -->
@@ -24,21 +27,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
         }
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Left sidebar for ads */
+        .sidebar-left {
+            width: 300px;
             padding: 10px;
-            z-index: 1000; /* Ensure it stays on top of other content */
+            background: #f0f0f0;
+            height: 100vh;
         }
-        .logo img {
-            height: 100px; /* Adjust the height as needed */
-            width: auto; /* Maintain aspect ratio */
-        }
-        #content {
-            max-width: 800px;
-            margin: 0 auto;
+        /* Main content styling */
+        .site-content {
+            flex-grow: 1;
             padding: 20px;
         }
         textarea {
@@ -71,11 +71,21 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-        </div>
-    </header>
+
+    <!-- Left Sidebar for Ad Placement -->
+    <div class="sidebar-left">
+        <!-- Ad Placement -->
+        <ins class="adsbygoogle"
+             style="display:block; width:300px; height:300px"
+             data-ad-client="ca-pub-9028889920072565"
+             data-ad-slot="your-ad-slot-id"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Main Content -->
     <div id="content" class="site-content">
         <main id="main" class="site-main" role="main">
             <article id="post-15" class="post-15 page type-page status-publish hentry">
